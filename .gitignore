@@ -1,0 +1,11 @@
+node_modules/
+.next/
+data/db.json
+data/db.json.tmp
+.env
+.env.local
+*.log
+
+*.zip
+*.tsbuildinfo
+data/*.backup.json

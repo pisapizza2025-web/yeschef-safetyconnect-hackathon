@@ -1,0 +1,417 @@
+{
+  "meta": {
+    "description": "Yes Chef SafetyConnect hackathon demo fixtures. ALL DATA IS FICTIONAL DEMO DATA. No real people, businesses, phone numbers or email addresses.",
+    "generatedOn": "2026-10-22",
+    "generatedBy": "Grok Bot for Csenge",
+    "version": "demo-v1",
+    "timestampsNote": "Seeded timestamps are UTC demonstration data, not records made at the time. Show times in the site timezone.",
+    "keyStyle": "camelCase (matches build plan section 4). DB columns are snake_case: siteId->site_id, serviceTags->service_tags, sourceLabel->source_label, displayName->display_name, supplierId->supplier_id, expertiseTags->expertise_tags, availabilityLabel->availability_label, credentialsStatus->credentials_status, caseId->case_id, helperId->helper_id, sourceCaseId->source_case_id, approvedBy->approved_by, publishedAt->published_at, createdAt->created_at"
+  },
+  "sites": [
+    {
+      "id": "alpha",
+      "name": "Demo Kitchen A",
+      "label": "Demo Kitchen A",
+      "isDemo": true,
+      "city": "London",
+      "country": "GB",
+      "timezone": "Europe/London",
+      "notes": "DEMO site WITH an approved refrigeration contractor"
+    },
+    {
+      "id": "beta",
+      "name": "Demo Kitchen B",
+      "label": "Demo Kitchen B",
+      "isDemo": true,
+      "city": "London",
+      "country": "GB",
+      "timezone": "Europe/London",
+      "notes": "DEMO site with NO refrigeration supplier; tests the external fallback"
+    }
+  ],
+  "procedures": [
+    {
+      "id": "proc-alpha-fridge",
+      "siteId": "alpha",
+      "category": "fridge",
+      "title": "Refrigeration Incident Procedure (DEMO)",
+      "version": "demo-v1",
+      "sourceLabel": "Demo Kitchen A site procedure binder (DEMO, fictional)",
+      "body": "1. Record the reading, the time, the unit name and who saw it. Do not overwrite earlier readings.\n2. Tell the manager on duty straight away.\n3. Keep the door closed and move food only if the manager says so; label affected items 'HOLD - do not use'.\n4. If it is not known how long food was above the site limit, do not use it or declare it safe. The manager decides what happens to it under the site's approved assessment.\n5. Contact the site's approved refrigeration service provider (or find one if the site has none) and log the call.\n6. Recheck the temperature and log it as a new reading. The manager closes the incident.",
+      "config": {
+        "fridgeMaxC": 5,
+        "configLabel": "Site-configured demo value, not a global or legal threshold"
+      }
+    },
+    {
+      "id": "proc-alpha-allergen",
+      "siteId": "alpha",
+      "category": "allergen",
+      "title": "Allergen Incident Procedure (DEMO)",
+      "version": "demo-v1",
+      "sourceLabel": "Demo Kitchen A site procedure binder (DEMO, fictional)",
+      "body": "1. Stop: withhold the dish and any food made with the affected ingredient until it is verified.\n2. Tell the manager on duty.\n3. Contact the supplier for the full ingredient and allergen information and log who you spoke to and when.\n4. Never tell a customer a dish is safe or allergen-free while the ingredient list is unavailable.\n5. If anyone has symptoms of an allergic reaction, call emergency services (999) immediately.\n6. Keep the packaging and batch details. The manager decides when the dish can return."
+    },
+    {
+      "id": "proc-alpha-cooking",
+      "siteId": "alpha",
+      "category": "cooking",
+      "title": "Cooking Temperature Check Procedure (DEMO)",
+      "version": "demo-v1",
+      "sourceLabel": "Demo Kitchen A site procedure binder (DEMO, fictional)",
+      "body": "1. Keep the failed reading in the log exactly as measured. Never edit or delete it.\n2. Return the food to cooking and do not serve it.\n3. Clean the probe and take a separate recheck reading, then log it as a new entry with the time.\n4. If you are unsure about the probe or the result, use a second probe and tell the manager.\n5. The responsible person decides whether the food can be served or must be thrown away and signs the entry.",
+      "config": {
+        "cookingCoreMinC": 75,
+        "configLabel": "Site-configured demo value, not a global or legal threshold"
+      }
+    },
+    {
+      "id": "proc-alpha-records",
+      "siteId": "alpha",
+      "category": "records",
+      "title": "Daily Food Safety Records Procedure (DEMO)",
+      "version": "demo-v1",
+      "sourceLabel": "Demo Kitchen A site procedure binder (DEMO, fictional)",
+      "body": "1. Write records at the time of the check only.\n2. If a required record is missing, mark the slot 'MISSING RECORD' with the date. Do not fill it in afterwards from memory.\n3. Never backfill or backdate a record.\n4. Tell the manager on duty, who adds a dated note explaining the gap.\n5. Agree on a fix (for example, a reminder at each check time) and log it as an action.",
+      "config": {
+        "requiredCookingRecordsPerDay": 4,
+        "configLabel": "Site-configured demo value"
+      }
+    },
+    {
+      "id": "proc-beta-fridge",
+      "siteId": "beta",
+      "category": "fridge",
+      "title": "Refrigeration Incident Procedure (DEMO)",
+      "version": "demo-v1",
+      "sourceLabel": "Demo Kitchen B site procedure binder (DEMO, fictional)",
+      "body": "1. Record the reading, the time, the unit name and who saw it. Do not overwrite earlier readings.\n2. Tell the manager on duty straight away.\n3. Keep the door closed and move food only if the manager says so; label affected items 'HOLD - do not use'.\n4. If it is not known how long food was above the site limit, do not use it or declare it safe. The manager decides what happens to it under the site's approved assessment.\n5. Contact the site's approved refrigeration service provider (or find one if the site has none) and log the call.\n6. Recheck the temperature and log it as a new reading. The manager closes the incident.",
+      "config": {
+        "fridgeMaxC": 8,
+        "configLabel": "Site-configured demo value, not a global or legal threshold"
+      }
+    },
+    {
+      "id": "proc-beta-allergen",
+      "siteId": "beta",
+      "category": "allergen",
+      "title": "Allergen Incident Procedure (DEMO)",
+      "version": "demo-v1",
+      "sourceLabel": "Demo Kitchen B site procedure binder (DEMO, fictional)",
+      "body": "1. Stop: withhold the dish and any food made with the affected ingredient until it is verified.\n2. Tell the manager on duty.\n3. Contact the supplier for the full ingredient and allergen information and log who you spoke to and when.\n4. Never tell a customer a dish is safe or allergen-free while the ingredient list is unavailable.\n5. If anyone has symptoms of an allergic reaction, call emergency services (999) immediately.\n6. Keep the packaging and batch details. The manager decides when the dish can return."
+    },
+    {
+      "id": "proc-beta-cooking",
+      "siteId": "beta",
+      "category": "cooking",
+      "title": "Cooking Temperature Check Procedure (DEMO)",
+      "version": "demo-v1",
+      "sourceLabel": "Demo Kitchen B site procedure binder (DEMO, fictional)",
+      "body": "1. Keep the failed reading in the log exactly as measured. Never edit or delete it.\n2. Return the food to cooking and do not serve it.\n3. Clean the probe and take a separate recheck reading, then log it as a new entry with the time.\n4. If you are unsure about the probe or the result, use a second probe and tell the manager.\n5. The responsible person decides whether the food can be served or must be thrown away and signs the entry.",
+      "config": {
+        "cookingCoreMinC": 75,
+        "configLabel": "Site-configured demo value, not a global or legal threshold"
+      }
+    },
+    {
+      "id": "proc-beta-records",
+      "siteId": "beta",
+      "category": "records",
+      "title": "Daily Food Safety Records Procedure (DEMO)",
+      "version": "demo-v1",
+      "sourceLabel": "Demo Kitchen B site procedure binder (DEMO, fictional)",
+      "body": "1. Write records at the time of the check only.\n2. If a required record is missing, mark the slot 'MISSING RECORD' with the date. Do not fill it in afterwards from memory.\n3. Never backfill or backdate a record.\n4. Tell the manager on duty, who adds a dated note explaining the gap.\n5. Agree on a fix (for example, a reminder at each check time) and log it as an action.",
+      "config": {
+        "requiredCookingRecordsPerDay": 4,
+        "configLabel": "Site-configured demo value"
+      }
+    }
+  ],
+  "suppliers": [
+    {
+      "id": "sup-alpha-coldline",
+      "siteId": "alpha",
+      "name": "DEMO ColdLine Refrigeration (fictional)",
+      "serviceTags": [
+        "refrigeration",
+        "walk-in",
+        "cold-room"
+      ],
+      "status": "active",
+      "contractNote": "DEMO: annual service contract for walk-in cold room, call-out included (fictional)",
+      "contactName": "DEMO service desk (fictional)",
+      "phone": null,
+      "email": null,
+      "isFictional": true,
+      "sourceLabel": "Demo Kitchen A approved supplier list (DEMO)"
+    },
+    {
+      "id": "sup-alpha-saucery",
+      "siteId": "alpha",
+      "name": "DEMO Riverside Sauces Ltd (fictional)",
+      "serviceTags": [
+        "sauces",
+        "condiments",
+        "food-supplier"
+      ],
+      "status": "active",
+      "contractNote": "DEMO: weekly sauce delivery (fictional)",
+      "contactName": null,
+      "phone": null,
+      "email": null,
+      "isFictional": true,
+      "sourceLabel": "Demo Kitchen A approved supplier list (DEMO)"
+    },
+    {
+      "id": "sup-beta-drygoods",
+      "siteId": "beta",
+      "name": "DEMO Westway Dry Goods (fictional)",
+      "serviceTags": [
+        "dry-goods",
+        "packaging"
+      ],
+      "status": "active",
+      "contractNote": "DEMO: dry goods only, no equipment servicing (fictional)",
+      "contactName": null,
+      "phone": null,
+      "email": null,
+      "isFictional": true,
+      "sourceLabel": "Demo Kitchen B approved supplier list (DEMO)"
+    }
+  ],
+  "assets": [
+    {
+      "id": "asset-alpha-walkin",
+      "siteId": "alpha",
+      "type": "walk-in-fridge",
+      "displayName": "Walk-in Fridge A",
+      "supplierId": "sup-alpha-coldline",
+      "isDemo": true
+    },
+    {
+      "id": "asset-beta-walkin",
+      "siteId": "beta",
+      "type": "walk-in-fridge",
+      "displayName": "Walk-in Fridge B",
+      "supplierId": null,
+      "isDemo": true
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scn-fridge",
+      "type": "fridge",
+      "siteIdSuggestions": [
+        "alpha",
+        "beta"
+      ],
+      "assetId": "asset-alpha-walkin",
+      "priority": "high",
+      "title": "Walk-in fridge reading 9°C",
+      "description": "At the evening check the walk-in fridge display reads 9°C. Nobody knows when it last read within the site limit.",
+      "reportedFacts": [
+        "Temperature 9°C on the unit display",
+        "Exposure duration unknown",
+        "Fridge is full of prepped food for tomorrow"
+      ],
+      "missingInformation": [
+        "When was the last reading within the site limit?",
+        "Has the door been left open or is the unit faulty?",
+        "Which food items are stored inside?"
+      ],
+      "expectedOutcome": "Isolate and hold the food, escalate to the manager, follow the site fridge procedure, then contact ColdLine (alpha) or use the external search (beta).",
+      "guardrails": [
+        "Never declare the food safe when the exposure time is unknown",
+        "Do not set a global threshold from this one example",
+        "Contacting a provider needs a human click"
+      ]
+    },
+    {
+      "id": "scn-allergen",
+      "type": "allergen",
+      "siteIdSuggestions": [
+        "alpha"
+      ],
+      "supplierId": "sup-alpha-saucery",
+      "priority": "high",
+      "title": "Unverified nut allergen in supplier sauce",
+      "description": "A new batch of satay-style sauce from the supplier arrived without its label. A customer with a nut allergy has asked about a dish that uses it.",
+      "reportedFacts": [
+        "Ingredient list unavailable",
+        "Batch label missing",
+        "Customer has declared a nut allergy"
+      ],
+      "missingInformation": [
+        "Full ingredient and allergen list from the supplier",
+        "Batch number",
+        "Has the sauce already been served today?"
+      ],
+      "expectedOutcome": "Withhold the dish, tell the customer it cannot be confirmed, contact the supplier for the ingredient list and log it.",
+      "guardrails": [
+        "Never tell a customer the dish is safe",
+        "Withhold until verified by the supplier",
+        "If anyone has symptoms, call emergency services (999) immediately"
+      ]
+    },
+    {
+      "id": "scn-cooking",
+      "type": "cooking",
+      "siteIdSuggestions": [
+        "alpha",
+        "beta"
+      ],
+      "priority": "medium",
+      "title": "Chicken temperature below configured site limit",
+      "description": "A probe reading on a tray of roast chicken is below the site-configured core minimum.",
+      "reportedFacts": [
+        "Recorded reading below site limit",
+        "Reading: 68°C (demo value)",
+        "Site-configured minimum: see procedure config"
+      ],
+      "missingInformation": [
+        "Was the probe cleaned and working?",
+        "Where in the thickest part was it measured?"
+      ],
+      "expectedOutcome": "Keep the failed reading, return to cooking, take a separate recheck as a new entry, responsible person decides.",
+      "guardrails": [
+        "Never overwrite or delete the failed reading",
+        "The recheck is a separate event",
+        "Only the responsible person decides whether to serve"
+      ]
+    },
+    {
+      "id": "scn-records",
+      "type": "records",
+      "siteIdSuggestions": [
+        "beta",
+        "alpha"
+      ],
+      "priority": "medium",
+      "title": "Missing daily food safety records",
+      "description": "At close, the cooking temperature log has only two of the four required entries for today.",
+      "reportedFacts": [
+        "Four cooking records required",
+        "Two actual records present"
+      ],
+      "records": [
+        {
+          "slot": 1,
+          "status": "recorded",
+          "item": "Roast chicken thighs (DEMO)",
+          "readingC": 78,
+          "recordedAt": "2026-10-22T11:15:00Z",
+          "recordedBy": "DEMO Chef Mina (fictional)"
+        },
+        {
+          "slot": 2,
+          "status": "recorded",
+          "item": "Beef lasagne (DEMO)",
+          "readingC": 80,
+          "recordedAt": "2026-10-22T13:40:00Z",
+          "recordedBy": "DEMO Chef Mina (fictional)"
+        },
+        {
+          "slot": 3,
+          "status": "MISSING RECORD",
+          "item": null,
+          "readingC": null,
+          "recordedAt": null,
+          "recordedBy": null
+        },
+        {
+          "slot": 4,
+          "status": "MISSING RECORD",
+          "item": null,
+          "readingC": null,
+          "recordedAt": null,
+          "recordedBy": null
+        }
+      ],
+      "missingInformation": [
+        "Why were slots 3 and 4 not recorded?",
+        "Who was on the pass at those times?"
+      ],
+      "expectedOutcome": "Show two real rows and two MISSING RECORD slots; the manager adds a dated note and a corrective action.",
+      "guardrails": [
+        "Never backfill or backdate a record",
+        "Never invent item names for missing slots",
+        "The gap stays visible in the timeline"
+      ]
+    }
+  ],
+  "communityHelpers": [
+    {
+      "id": "helper-1",
+      "displayName": "DEMO Priya, sous chef (fictional)",
+      "expertiseTags": [
+        "refrigeration",
+        "kitchen-operations"
+      ],
+      "availabilityLabel": "Usually evenings (demo)",
+      "credentialsStatus": "self-declared, unverified",
+      "isFictional": true
+    },
+    {
+      "id": "helper-2",
+      "displayName": "DEMO Tom, ex-refrigeration engineer (fictional)",
+      "expertiseTags": [
+        "refrigeration",
+        "walk-in",
+        "cold-room"
+      ],
+      "availabilityLabel": "Weekdays (demo)",
+      "credentialsStatus": "self-declared, unverified",
+      "isFictional": true
+    },
+    {
+      "id": "helper-3",
+      "displayName": "DEMO Aisha, kitchen manager (fictional)",
+      "expertiseTags": [
+        "allergen",
+        "records"
+      ],
+      "availabilityLabel": "Lunch service (demo)",
+      "credentialsStatus": "self-declared, unverified",
+      "isFictional": true
+    },
+    {
+      "id": "helper-4",
+      "displayName": "DEMO Leo, head chef (fictional)",
+      "expertiseTags": [
+        "cooking",
+        "records"
+      ],
+      "availabilityLabel": "Weekends (demo)",
+      "credentialsStatus": "self-declared, unverified",
+      "isFictional": true
+    }
+  ],
+  "communityMessages": [
+    {
+      "id": "msg-1",
+      "caseId": "scn-fridge",
+      "helperId": "helper-2",
+      "createdAt": "2026-10-22T18:30:00Z",
+      "body": "Not official advice, just experience: check the door seal and whether the evaporator fan is running or iced up. Don't keep opening the door. Your manager and your engineer make the call on the food."
+    },
+    {
+      "id": "msg-2",
+      "caseId": "scn-fridge",
+      "helperId": "helper-1",
+      "createdAt": "2026-10-22T18:34:00Z",
+      "body": "When this happened to us we labelled everything HOLD and moved it to a working fridge only after our manager agreed. Log every reading as you go, it helps the engineer."
+    }
+  ],
+  "knowledgeCards": [
+    {
+      "id": "card-1",
+      "sourceCaseId": "demo-resolved-fridge-001",
+      "siteId": "alpha",
+      "optIn": true,
+      "redacted": true,
+      "summary": "Walk-in fridge reading rose above the site limit overnight (time unknown). Team held all food, escalated to the manager and called the approved contractor. Cause: iced evaporator. Learning: add a closing-time temperature check and a door-seal check to the weekly list.",
+      "approvedBy": "DEMO Manager, Demo Kitchen A (fictional)",
+      "publishedAt": "2026-10-21T16:00:00Z"
+    }
+  ]
+}

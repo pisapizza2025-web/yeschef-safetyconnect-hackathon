@@ -1,0 +1,30 @@
+{
+  "_note": "DEMO DATA. Every site, procedure, supplier and helper below is fictional and clearly labelled. No phone numbers or emails are invented (null means none on file). Replace this file with Csenge's demo-fixtures.json; the app accepts the same shape.",
+  "sites": [
+    { "id": "alpha", "label": "Demo Kitchen A", "city": "London", "country": "GB", "timezone": "Europe/London", "settings": { "fridgeMaxC": 8, "cookingMinC": 75 } },
+    { "id": "beta", "label": "Demo Kitchen B", "city": "London", "country": "GB", "timezone": "Europe/London", "settings": { "fridgeMaxC": 8, "cookingMinC": 75 } }
+  ],
+  "procedures": [
+    { "siteId": "alpha", "category": "fridge", "title": "Refrigeration Incident Procedure (DEMO)", "version": "demo-v1", "body": "Escalate to the manager. Isolate potentially affected food and hold it until it has been assessed under the site's approved procedure. Call the refrigeration contractor. Record readings and every action. DEMO content, not food safety advice." },
+    { "siteId": "beta", "category": "fridge", "title": "Refrigeration Incident Procedure (DEMO)", "version": "demo-v1", "body": "Escalate to the manager. Isolate potentially affected food and hold it until it has been assessed under the site's approved procedure. Find a refrigeration engineer. Record readings and every action. DEMO content, not food safety advice." },
+    { "siteId": "alpha", "category": "allergen", "title": "Unverified Allergen Information (DEMO)", "version": "demo-v1", "body": "If ingredient or allergen information is missing, do not assume the product is free of any allergen. Hold the product for allergen-sensitive guests until the supplier confirms in writing. DEMO content, not food safety advice." },
+    { "siteId": "beta", "category": "allergen", "title": "Unverified Allergen Information (DEMO)", "version": "demo-v1", "body": "If ingredient or allergen information is missing, do not assume the product is free of any allergen. Hold the product for allergen-sensitive guests until the supplier confirms in writing. DEMO content, not food safety advice." },
+    { "siteId": "alpha", "category": "cooking", "title": "Cooking Temperature Check (DEMO)", "version": "demo-v1", "body": "If a probe reading is below the site limit, keep cooking and measure again. Record the failed reading and the recheck as separate entries. DEMO content, not food safety advice." },
+    { "siteId": "beta", "category": "cooking", "title": "Cooking Temperature Check (DEMO)", "version": "demo-v1", "body": "If a probe reading is below the site limit, keep cooking and measure again. Record the failed reading and the recheck as separate entries. DEMO content, not food safety advice." },
+    { "siteId": "alpha", "category": "records", "title": "Missing Daily Records (DEMO)", "version": "demo-v1", "body": "Do not back-fill missing records from memory. Record that records are missing, tell the manager, and complete the next record on time. DEMO content, not food safety advice." },
+    { "siteId": "beta", "category": "records", "title": "Missing Daily Records (DEMO)", "version": "demo-v1", "body": "Do not back-fill missing records from memory. Record that records are missing, tell the manager, and complete the next record on time. DEMO content, not food safety advice." }
+  ],
+  "suppliers": [
+    { "siteId": "alpha", "name": "DEMO Refrigeration Contractor", "serviceTags": ["refrigeration"], "phone": null, "email": null, "isFictional": true, "source": "Demo site supplier list (fictional)" }
+  ],
+  "scenarios": [
+    { "type": "fridge", "title": "Walk-in fridge reading 9°C", "reportedFacts": ["Temperature 9°C", "Exposure duration unknown"], "starter": { "reading": 9, "exposure": "unknown" } },
+    { "type": "allergen", "title": "Unverified nut allergen in supplier sauce", "reportedFacts": ["Ingredient list unavailable"], "starter": { "product": "", "note": "Ingredient list unavailable" } },
+    { "type": "cooking", "title": "Chicken temperature below configured site limit", "reportedFacts": ["Recorded reading below site limit"], "starter": { "reading": 68, "item": "" } },
+    { "type": "records", "title": "Missing daily food safety records", "reportedFacts": ["Four cooking records required", "Two actual records present"], "starter": { "required": 4, "entries": [ { "time": "11:30", "value": "76" }, { "time": "12:40", "value": "78" } ] } }
+  ],
+  "helpers": [
+    { "id": "helper-1", "name": "Demo Helper Sam", "note": "Self-declared community helper (DEMO, not verified)" },
+    { "id": "helper-2", "name": "Demo Helper Priya", "note": "Self-declared community helper (DEMO, not verified)" }
+  ]
+}

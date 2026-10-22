@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "note": "Research by Grok Bot for Csenge on 22 Oct 2026, for the Demo Kitchen B 'no refrigeration contractor' branch. This is a snapshot, NOT a live app search. These are real businesses: availability is not confirmed and none has been contacted. Contacting a provider needs a human click.",
+    "retrievedAt": "2026-10-22T18:26:54Z",
+    "venue": "Expedite London HQ, 7 Lyric Square, London W6 0DA",
+    "siteId": "beta",
+    "category": "fridge",
+    "method": "WebSearch, then each page was loaded (HTTP 200) on 22 Oct 2026. Contacts were copied only from each provider's own site.",
+    "searchLinkTemplates": {
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query={serviceQuery}+near+{postcode}",
+      "googleWeb": "https://www.google.com/search?q={serviceQuery}+near+{postcode}",
+      "encoding": "URL-encode each part, e.g. encodeURIComponent(`${service} near ${postcode}`). serviceQuery for fridge = 'commercial refrigeration repair'"
+    }
+  },
+  "results": [
+    {
+      "id": "ext-keptcold",
+      "source": "external_business",
+      "title": "Kept Cold",
+      "relevanceReason": "Commercial refrigeration repair; page names Hammersmith W6 and 24/7 emergency repairs for restaurants and food businesses.",
+      "citation": {
+        "label": "Kept Cold - Commercial Refrigeration Engineer Hammersmith (provider website)",
+        "uri": "https://www.keptcold.co.uk/hammersmith.html"
+      },
+      "sourceQuote": "Postcodes covered: W6, W12 ... Same-day emergency repairs across Hammersmith. Engineers available 24 hours a day, 7 days a week.",
+      "contact": {
+        "website": "https://www.keptcold.co.uk/",
+        "phone": "0208 146 9071",
+        "email": "service@keptcold.co.uk"
+      },
+      "contactSource": "Copied exactly from the provider's own website page (citation.uri unless noted)",
+      "verification": "source_found",
+      "availability": "not_confirmed",
+      "availabilityNote": "Not confirmed. Research note only: call the provider to check availability, response time and price.",
+      "selectedByHuman": false
+    },
+    {
+      "id": "ext-londonhvacpro",
+      "source": "external_business",
+      "title": "London HVAC Pro",
+      "relevanceReason": "Walk-in cold room repair in Hammersmith W6, with 24/7 emergency callout. Matches the walk-in fridge case.",
+      "citation": {
+        "label": "London HVAC Pro - Commercial Refrigeration & Air Conditioning Hammersmith and Fulham W6 (provider website)",
+        "uri": "https://londonhvacpro.com/areas/hammersmith-and-fulham"
+      },
+      "sourceQuote": "Install, service and emergency repair of walk-in cold rooms, blast freezers and modular cold storage across Hammersmith and Fulham W6. ... 24/7 emergency callout.",
+      "contact": {
+        "website": "https://londonhvacpro.com/",
+        "phone": "07427 826446"
+      },
+      "contactSource": "Copied exactly from the provider's own website page (citation.uri unless noted)",
+      "verification": "source_found",
+      "availability": "not_confirmed",
+      "availabilityNote": "Not confirmed. Research note only: call the provider to check availability, response time and price.",
+      "selectedByHuman": false,
+      "contactNote": "The page's meta description also lists 0208 935 5572. The visible call button shows 07427 826446."
+    },
+    {
+      "id": "ext-bear",
+      "source": "external_business",
+      "title": "Bear Building Services",
+      "relevanceReason": "Covers W6 and offers cold room (walk-in fridge) repair. Its cold room page says 24/7, subject to engineer availability.",
+      "citation": {
+        "label": "Bear Building Services - Commercial Fridge Repair Hammersmith & Fulham (provider website)",
+        "uri": "https://bearbuildingservices.com/commercial-fridge-repair-hammersmith-fulham/"
+      },
+      "sourceQuote": "Emergency and planned commercial refrigeration repair for Hammersmith and Fulham restaurants, cafes, bars and hotels. F-Gas certified engineers across W6, W12 and SW6.",
+      "contact": {
+        "website": "https://bearbuildingservices.com/",
+        "phone": "020 3002 6826",
+        "email": "info@bearbuildingservices.com"
+      },
+      "contactSource": "Copied exactly from the provider's page https://bearbuildingservices.com/services/cold-room-repair-london/",
+      "verification": "source_found",
+      "availability": "not_confirmed",
+      "availabilityNote": "Not confirmed. Research note only: call the provider to check availability, response time and price.",
+      "selectedByHuman": false,
+      "secondaryCitation": {
+        "label": "Bear - Cold Room Repair London",
+        "uri": "https://bearbuildingservices.com/services/cold-room-repair-london/"
+      }
+    },
+    {
+      "id": "ext-chefcool",
+      "source": "external_business",
+      "title": "Chef Cool Refrigeration",
+      "relevanceReason": "Walk-in fridge repair in Fulham, next to Hammersmith, with 24/7 cover across London. The page does not name W6 specifically, so this is a weaker match.",
+      "citation": {
+        "label": "Chef Cool - Commercial Refrigeration Chelsea, Fulham and Westminster (provider website)",
+        "uri": "https://chefcool.co.uk/commercial-refrigeration-chelsea-fulham-westminster/"
+      },
+      "sourceQuote": "In Chelsea, Fulham, and Westminster, Chef Cool protects your goods ... complete walk-in fridge repairs ... Chef Cool Refrigeration provides 24/7 refrigeration ... services across London",
+      "contact": {
+        "website": "https://chefcool.co.uk/",
+        "phone": "07863206902",
+        "email": "info@chefcool.co.uk"
+      },
+      "contactSource": "Copied exactly from the provider's own website page (citation.uri unless noted)",
+      "verification": "source_found",
+      "availability": "not_confirmed",
+      "availabilityNote": "Not confirmed. Research note only: call the provider to check availability, response time and price.",
+      "selectedByHuman": false
+    },
+    {
+      "id": "ext-search-maps",
+      "source": "external_search_link",
+      "title": "Search Google Maps: commercial refrigeration repair near W6 0DA",
+      "relevanceReason": "Opens a live map search for refrigeration engineers near the site postcode. The user chooses who to contact.",
+      "citation": {
+        "label": "Google Maps search (external)",
+        "uri": "https://www.google.com/maps/search/?api=1&query=commercial+refrigeration+repair+near+W6+0DA"
+      },
+      "verification": "unverified",
+      "availability": "not_confirmed",
+      "selectedByHuman": false
+    },
+    {
+      "id": "ext-search-web",
+      "source": "external_search_link",
+      "title": "Search the web: commercial refrigeration repair near W6 0DA",
+      "relevanceReason": "Web search fallback for the same query.",
+      "citation": {
+        "label": "Google search (external)",
+        "uri": "https://www.google.com/search?q=commercial+refrigeration+repair+near+W6+0DA"
+      },
+      "verification": "unverified",
+      "availability": "not_confirmed",
+      "selectedByHuman": false
+    }
+  ]
+}
